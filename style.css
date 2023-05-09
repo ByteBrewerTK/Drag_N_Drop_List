@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{
+    --bg-col:#394867;
+    --card-col: #F1F6F9;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+}
+body{
+    background: var(--bg-col);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+.drag-drop-list{
+    width: 445px;
+    background: var(--card-col);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.items .details img{
+    width: 43px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+.drag-drop-list .items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 11px;
+    padding: .7rem;
+    border: 1px solid #ccc;
+    border-radius: .4rem;
+    cursor:move;
+    
+}
+.drag-drop-list .items .details{
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+}
+.items .details span{
+    font-size: 1.1rem;
+}
+.drag-drop-list .items i{
+    font-size: 1.1rem;
+    color: #474747;
+}
+.items.dragging :where(.details, i) {
+    opacity: .5;
+}
+.items.dragging{
+    opacity: 1;
+}
